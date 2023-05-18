@@ -9,7 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\" />
+    <Folder Include="docs\database\" />
+    <Folder Include="tests\" />
   </ItemGroup>
 
 </Project>

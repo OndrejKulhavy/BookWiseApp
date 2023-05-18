@@ -28,12 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.input_login_username = new System.Windows.Forms.TextBox();
+            this.button_login = new System.Windows.Forms.Button();
+            this.input_login_password = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // input_login_username
+            // 
+            this.input_login_username.Location = new System.Drawing.Point(12, 47);
+            this.input_login_username.Name = "input_login_username";
+            this.input_login_username.PlaceholderText = "Enter your username";
+            this.input_login_username.Size = new System.Drawing.Size(304, 27);
+            this.input_login_username.TabIndex = 0;
+            // 
+            // button_login
+            // 
+            this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_login.AutoSize = true;
+            this.button_login.Location = new System.Drawing.Point(222, 163);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(94, 30);
+            this.button_login.TabIndex = 2;
+            this.button_login.Text = "Login";
+            this.button_login.UseVisualStyleBackColor = true;
+            // 
+            // input_login_password
+            // 
+            this.input_login_password.Location = new System.Drawing.Point(12, 95);
+            this.input_login_password.Name = "input_login_password";
+            this.input_login_password.PasswordChar = '*';
+            this.input_login_password.PlaceholderText = "Enter your password";
+            this.input_login_password.Size = new System.Drawing.Size(304, 27);
+            this.input_login_password.TabIndex = 1;
+            this.input_login_password.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 35);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Login";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Login
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(328, 205);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.input_login_password);
+            this.Controls.Add(this.button_login);
+            this.Controls.Add(this.input_login_username);
+            this.Name = "Login";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private TextBox input_login_username;
+        private Button button_login;
+        private TextBox input_login_password;
+        private Label label1;
     }
 }
