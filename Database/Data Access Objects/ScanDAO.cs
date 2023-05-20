@@ -4,31 +4,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookWiseApp.Database.Models;
-
+using System.Data.SqlClient;
 
 namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class ScanDAO : IDAO<Scan>
     {
+        private SqlConnection connection;
+
+        public ScanDAO()
+        {
+            this.connection = DbConnection.connection;
+            if (connection == null)
+                throw new Exception("Conection to database failed in ScanDAO constructor");
+        }
+
         public void Delete(Scan element)
         {
-            throw new NotImplementedException();
+            string query = "DELETE FROM Scan WHERE ScanID = @ScanID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ScanID", element.Id);
+            command.ExecuteNonQuery();
         }
 
         public IEnumerable<Scan> GetAll()
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM Scan";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Scan scan = new Scan(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetDateTime(2)
+                    );
+                yield return scan;
+            }
+            reader.Close();
         }
 
         public Scan? GetByID(int id)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM Scan WHERE ScanID = @ScanID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ScanID", id);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Scan scan = new Scan(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetDateTime(2)
+                    );
+                reader.Close();
+                return scan;
+            }
+            reader.Close();
+            return null;
         }
 
         public void Save(Scan element)
         {
-            throw new NotImplementedException();
+            if (element.Id == 0){
+                string query = "INSERT INTO Scan (ScanID, ScanType, ScanDate) VALUES (@ScanID, @ScanType, @ScanDate)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ScanID", element.Id);
+                command.Parameters.AddWithValue("@ScanDate", element.ScanDate);
+                command.ExecuteNonQuery();
+            }
+            else{
+                string query = "UPDATE Scan SET ScanType = @ScanType, ScanDate = @ScanDate WHERE ScanID = @ScanID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ScanID", element.Id);
+                command.Parameters.AddWithValue("@ScanDate", element.ScanDate);
+                command.ExecuteNonQuery();
+            }
         }
-
     }
 }
