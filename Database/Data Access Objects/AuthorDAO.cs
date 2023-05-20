@@ -18,7 +18,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         }
         public void Delete(Author author)
         {
-            string query = "DELETE FROM Author WHERE AuthorID = @AuthorID";
+            string query = "DELETE FROM Author WHERE id = @AuthorID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@AuthorID", author.Id);
             command.ExecuteNonQuery();
@@ -32,10 +32,10 @@ namespace BookWiseApp.Database.Data_Access_Objects
             while (reader.Read())
             {
                 Author author = new Author(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString(),
-                    reader[3].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3)
                 );
                 yield return author;
             }
@@ -45,17 +45,17 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public Author? GetByID(int id)
         {
             Author? author = null;
-            string query = "SELECT * FROM Author WHERE AuthorID = @AuthorID";
+            string query = "SELECT * FROM Author WHERE id = @AuthorID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@AuthorID", id);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 author = new Author(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString(),
-                    reader[3].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3)
                 );
             }
             reader.Close();
@@ -66,7 +66,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         {
             if(author.Id == 0)
             {
-                string query = "INSERT INTO Author (FirstName, LastName, Biography) VALUES (@FirstName, @LastName, @Biography)";
+                string query = "INSERT INTO Author (first_name, last_name, biography) VALUES (@FirstName, @LastName, @Biography)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", author.FirstName);
                 command.Parameters.AddWithValue("@LastName", author.LastName);
@@ -75,7 +75,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
             }
             else
             {
-                string query = "UPDATE Author SET FirstName = @FirstName, LastName = @LastName, Biography = @Biography WHERE AuthorID = @AuthorID";
+                string query = "UPDATE Author SET first_name = @FirstName, last_name = @LastName, biography = @Biography WHERE id = @AuthorID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AuthorID", author.Id);
                 command.Parameters.AddWithValue("@FirstName", author.FirstName);
