@@ -10,7 +10,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class CategoryDAO : IDAO<Category>
     {
-        private SqlConnection connection;
+        private SqlConnection? connection;
 
         public CategoryDAO()
         {

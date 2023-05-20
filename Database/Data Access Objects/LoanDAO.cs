@@ -10,7 +10,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class LoanDAO : IDAO<Loan>
     {
-        private SqlConnection connection;
+        private SqlConnection? connection;
 
         public LoanDAO()
         {

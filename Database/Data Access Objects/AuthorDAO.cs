@@ -10,7 +10,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class AuthorDAO : IDAO <Author>
     {
-        private SqlConnection connection;
+        private SqlConnection? connection;
         public AuthorDAO()
         {
             this.connection = DbConnection.connection;

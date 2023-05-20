@@ -10,7 +10,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class EmployeeDAO : IDAO<Employee>
     {
-        private SqlConnection connection;
+        private SqlConnection? connection;
 
         public EmployeeDAO()
         {

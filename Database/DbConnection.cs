@@ -10,7 +10,7 @@ namespace BookWiseApp.Database.Models
 {
     public class DbConnection
     {
-        public static SqlConnection connection;
+        public static SqlConnection? connection;
 
         public DbConnection()
         {
