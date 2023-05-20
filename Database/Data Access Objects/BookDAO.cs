@@ -18,7 +18,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         }
         public void Delete(Book book)
         {
-            string query = "DELETE FROM Book WHERE BookID = @BookID";
+            string query = "DELETE FROM Book WHERE id = @BookID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@BookID", book.Id);
             command.ExecuteNonQuery();
@@ -32,12 +32,12 @@ namespace BookWiseApp.Database.Data_Access_Objects
             while (reader.Read())
             {
                 Book book = new Book(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    Convert.ToInt32(reader[2].ToString()),
-                    Convert.ToInt32(reader[3].ToString()),
-                    reader[4].ToString(),
-                    Convert.ToDateTime(reader[5].ToString())
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetString(4),
+                    reader.GetDateTime(5)
                 );
                 yield return book;
             }
@@ -46,19 +46,19 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public Book? GetByID(int id)
         {
             Book? book = null;
-            string query = "SELECT * FROM Book WHERE BookID = @BookID";
+            string query = "SELECT * FROM Book WHERE id = @BookID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@BookID", id);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 book = new Book(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    Convert.ToInt32(reader[2].ToString()),
-                    Convert.ToInt32(reader[3].ToString()),
-                    reader[4].ToString(),
-                    Convert.ToDateTime(reader[5].ToString())
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetString(4),
+                    reader.GetDateTime(5)
                 );
             }
             return book;
@@ -67,7 +67,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public void Save(Book book)
         {
             if(book.Id == 0){
-                string query = "INSERT INTO Book (Title, AuthorID, GenreID, ISBN, PublishDate) VALUES (@Title, @AuthorID, @GenreID, @ISBN, @PublishDate)";
+                string query = "INSERT INTO Book (title, author_id, category_id, ISBN, publication_date) VALUES (@Title, @AuthorID, @GenreID, @ISBN, @PublishDate)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Title", book.Title);
                 command.Parameters.AddWithValue("@AuthorID", book.AuthorId);
@@ -76,7 +76,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
                 command.Parameters.AddWithValue("@PublishDate", book.PublicationDate);
                 command.ExecuteNonQuery();
             } else {
-                string query = "UPDATE Book SET Title = @Title, AuthorID = @AuthorID, GenreID = @GenreID, ISBN = @ISBN, PublishDate = @PublishDate WHERE BookID = @BookID";
+                string query = "UPDATE Book SET title = @Title, author_id = @AuthorID, category_id = @GenreID, ISBN = @ISBN, publication_date = @PublishDate WHERE id = @BookID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@BookID", book.Id);
                 command.Parameters.AddWithValue("@Title", book.Title);
