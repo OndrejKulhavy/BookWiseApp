@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using BookWiseApp.Database.Models;
 using System.Data.SqlClient;
 
-
 namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class MemberDAO : IDAO<Member>
@@ -16,11 +15,13 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public MemberDAO()
         {
             this.connection = DbConnection.connection;
-            if (connection == null) throw new Exception("Conection to database failed in MemberDAO constructor");
+            if (connection == null)
+                throw new Exception("Conection to database failed in MemberDAO constructor");
         }
+
         public void Delete(Member member)
         {
-            string query = "DELETE FROM Member WHERE MemberID = @MemberID";
+            string query = "DELETE FROM Member WHERE id = @MemberID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@MemberID", member.Id);
             command.ExecuteNonQuery();
@@ -40,7 +41,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
                     reader.GetString(3),
                     reader.GetString(4),
                     reader.GetString(5)
-                    );
+                );
                 yield return member;
             }
             reader.Close();
@@ -48,7 +49,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public Member? GetByID(int id)
         {
-            string query = "SELECT * FROM Member WHERE MemberID = @MemberID";
+            string query = "SELECT * FROM Member WHERE id = @MemberID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@MemberID", id);
             SqlDataReader reader = command.ExecuteReader();
@@ -61,7 +62,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
                     reader.GetString(3),
                     reader.GetString(4),
                     reader.GetString(5)
-                    );
+                );
                 reader.Close();
                 return member;
             }
@@ -71,28 +72,31 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Save(Member element)
         {
-            if (element.Id == 0){
-                string query = "INSERT INTO Member (FirstName, LastName, PasswordHash, Email, PhoneNumber) VALUES (@FirstName, @LastName, @PasswordHash, @Email, @PhoneNumber)";
+            if (element.Id == 0)
+            {
+                string query =
+                    "INSERT INTO Member (first_name, last_name, address, email, phone_number) VALUES (@FirstName, @LastName, @Address, @Email, @PhoneNumber)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", element.FirstName);
                 command.Parameters.AddWithValue("@LastName", element.LastName);
-                command.Parameters.AddWithValue("@PasswordHash", element.Address);
+                command.Parameters.AddWithValue("@Address", element.Address);
                 command.Parameters.AddWithValue("@Email", element.Email);
-                command.Parameters.AddWithValue("@PhoneNumber", element.Phone);
+                command.Parameters.AddWithValue("@PhoneNumber", element.PhoneNumber);
                 command.ExecuteNonQuery();
             }
-            else{
-                string query = "UPDATE Member SET FirstName = @FirstName, LastName = @LastName, PasswordHash = @PasswordHash, Email = @Email, PhoneNumber = @PhoneNumber WHERE MemberID = @MemberID";
+            else
+            {
+                string query =
+                    "UPDATE Member SET first_name = @FirstName, last_name = @LastName, address = @Address, email = @Email, phone_number = @PhoneNumber WHERE id = @MemberID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", element.FirstName);
                 command.Parameters.AddWithValue("@LastName", element.LastName);
-                command.Parameters.AddWithValue("@PasswordHash", element.Address); 
+                command.Parameters.AddWithValue("@Address", element.Address);
                 command.Parameters.AddWithValue("@Email", element.Email);
-                command.Parameters.AddWithValue("@PhoneNumber", element.Phone);
+                command.Parameters.AddWithValue("@PhoneNumber", element.PhoneNumber);
                 command.Parameters.AddWithValue("@MemberID", element.Id);
                 command.ExecuteNonQuery();
             }
         }
-
     }
 }
