@@ -21,7 +21,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Delete(Scan element)
         {
-            string query = "DELETE FROM Scan WHERE ScanID = @ScanID";
+            string query = "DELETE FROM Scan WHERE id = @ScanID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ScanID", element.Id);
             command.ExecuteNonQuery();
@@ -46,7 +46,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public Scan? GetByID(int id)
         {
-            string query = "SELECT * FROM Scan WHERE ScanID = @ScanID";
+            string query = "SELECT * FROM Scan WHERE id = @ScanID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ScanID", id);
             SqlDataReader reader = command.ExecuteReader();
@@ -67,17 +67,18 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public void Save(Scan element)
         {
             if (element.Id == 0){
-                string query = "INSERT INTO Scan (ScanID, ScanType, ScanDate) VALUES (@ScanID, @ScanType, @ScanDate)";
+                string query = "INSERT INTO Scan (ISBN, scan_date) VALUES (@ISBN, @scan_date)";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ScanID", element.Id);
-                command.Parameters.AddWithValue("@ScanDate", element.ScanDate);
+                command.Parameters.AddWithValue("@ISBN", element.ISBN);
+                command.Parameters.AddWithValue("@scan_date", element.ScanDate);
                 command.ExecuteNonQuery();
             }
             else{
-                string query = "UPDATE Scan SET ScanType = @ScanType, ScanDate = @ScanDate WHERE ScanID = @ScanID";
+                string query = "UPDATE Scan SET ISBN = @ISBN, scan_date = @scan_date WHERE id = @ScanID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ScanID", element.Id);
-                command.Parameters.AddWithValue("@ScanDate", element.ScanDate);
+                command.Parameters.AddWithValue("@ISBN", element.ISBN);
+                command.Parameters.AddWithValue("@scan_date", element.ScanDate);
                 command.ExecuteNonQuery();
             }
         }
