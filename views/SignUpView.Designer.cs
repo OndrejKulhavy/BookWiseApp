@@ -1,6 +1,6 @@
 ﻿namespace BookWiseApp.views
 {
-    partial class SignUp
+    partial class SignUpView
     {
         /// <summary>
         /// Required designer variable.

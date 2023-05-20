@@ -1,6 +1,6 @@
 ﻿namespace BookWiseApp
 {
-    partial class Login
+    partial class LoginView
     {
         /// <summary>
         ///  Required designer variable.

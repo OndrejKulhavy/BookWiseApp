@@ -1,8 +1,8 @@
 namespace BookWiseApp
 {
-    public partial class Login : Form
+    public partial class LoginView : Form
     {
-        public Login()
+        public LoginView()
         {
             InitializeComponent();
         }

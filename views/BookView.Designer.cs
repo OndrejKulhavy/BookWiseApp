@@ -1,6 +1,6 @@
 ﻿namespace BookWiseApp.views
 {
-    partial class Book
+    partial class BookView
     {
         /// <summary>
         /// Required designer variable.
