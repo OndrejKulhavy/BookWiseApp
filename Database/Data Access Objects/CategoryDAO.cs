@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using BookWiseApp.Database.Models;
 using System.Data.SqlClient;
 
-
-
 namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class CategoryDAO : IDAO<Category>
     {
         private SqlConnection connection;
+
         public CategoryDAO()
         {
             this.connection = DbConnection.connection;
-            if (connection == null) throw new Exception("Conection to database failed in CategoryDAO constructor");
+            if (connection == null)
+                throw new Exception("Conection to database failed in CategoryDAO constructor");
         }
+
         public void Delete(Category element)
         {
-            string query = "DELETE FROM Category WHERE CategoryID = @CategoryID";
+            string query = "DELETE FROM Category WHERE id = @CategoryID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@CategoryID", element.Id);
             command.ExecuteNonQuery();
@@ -34,9 +35,9 @@ namespace BookWiseApp.Database.Data_Access_Objects
             while (reader.Read())
             {
                 Category category = new Category(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2)
                 );
                 yield return category;
             }
@@ -46,16 +47,16 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public Category? GetByID(int id)
         {
             Category? category = null;
-            string query = "SELECT * FROM Category WHERE CategoryID = @CategoryID";
+            string query = "SELECT * FROM Category WHERE id = @CategoryID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@CategoryID", id);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 category = new Category(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2)
                 );
             }
             reader.Close();
@@ -64,11 +65,25 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Save(Category category)
         {
-            string query = "INSERT INTO Category (CategoryName) VALUES (@CategoryName)";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@CategoryName", category.Name);
-            command.ExecuteNonQuery();
+            if (category.Id == 0)
+            {
+                string query =
+                    "INSERT INTO Category (name, description) VALUES (@Name, @Description)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", category.Name);
+                command.Parameters.AddWithValue("@Description", category.Description);
+                command.ExecuteNonQuery();
+            }
+            else
+            {
+                string query =
+                    "UPDATE Category SET name = @Name, description = @Description WHERE id = @CategoryID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Name", category.Name);
+                command.Parameters.AddWithValue("@Description", category.Description);
+                command.Parameters.AddWithValue("@CategoryID", category.Id);
+                command.ExecuteNonQuery();
+            }
         }
-
     }
 }
