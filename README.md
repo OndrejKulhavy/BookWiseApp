@@ -1,4 +1,4 @@
-BookWise
+BookWise 📚
 ========
 
 Welcome to **BookWise**, a school final project created to manage a book library database efficiently. This application is specifically designed for library employees and includes a mobile app with a barcode scanner feature. By scanning barcodes using the mobile app, the corresponding book information is automatically displayed in the desktop app.
