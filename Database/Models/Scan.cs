@@ -8,5 +8,15 @@ namespace BookWiseApp.Database.Models
 {
     internal class Scan
     {
+        public int Id { get; set; }
+        public string ISBN { get; set; }
+        public DateTime ScanDate { get; set; }
+
+        public Scan(int id, string isbn, DateTime scanDate)
+        {
+            Id = id;
+            ISBN = isbn;
+            ScanDate = scanDate;
+        }
     }
 }

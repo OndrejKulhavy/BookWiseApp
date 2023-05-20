@@ -8,5 +8,21 @@ namespace BookWiseApp.Database.Models
 {
     internal class Employee
     {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set;}
+        public string PasswordHash { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+    
+        public Employee(int id, string firstName, string lastName, string passwordHash, string email, string phoneNumber)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            PasswordHash = passwordHash;
+            Email = email;
+            PhoneNumber = phoneNumber;
+        }
     }
 }
