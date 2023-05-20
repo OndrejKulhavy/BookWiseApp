@@ -24,5 +24,15 @@ namespace BookWiseApp.Database.Models
             Email = email;
             PhoneNumber = phoneNumber;
         }
+
+        public Employee(string firstName, string lastName, string passwordHash, string email, string phoneNumber)
+        {
+            Id = 0;
+            FirstName = firstName;
+            LastName = lastName;
+            PasswordHash = passwordHash;
+            Email = email;
+            PhoneNumber = phoneNumber;
+        }
     }
 }

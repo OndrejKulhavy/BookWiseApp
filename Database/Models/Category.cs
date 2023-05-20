@@ -18,5 +18,12 @@ namespace BookWiseApp.Database.Models
             Name = name;
             Description = description;
         }
+
+        public Category(string name, string description)
+        {
+            Id = 0;
+            Name = name;
+            Description = description;
+        }
     }
 }

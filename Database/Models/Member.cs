@@ -24,5 +24,15 @@ namespace BookWiseApp.Database.Models
             Email = email;
             Phone = phone;
         }
+
+        public Member(string firstName, string lastName, string address, string email, string phone)
+        {
+            Id = 0;
+            FirstName = firstName;
+            LastName = lastName;
+            Address = address;
+            Email = email;
+            Phone = phone;
+        }
     }
 }

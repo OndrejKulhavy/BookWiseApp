@@ -20,5 +20,14 @@ namespace BookWiseApp.Database.Models
             LastName = lastName;
             Biography = biography;
         }
+
+        public Author(string firstName, string lastName, string biography)
+        {
+            Id = 0;
+            FirstName = firstName;
+            LastName = lastName;
+            Biography = biography;
+        }
+
     }
 }

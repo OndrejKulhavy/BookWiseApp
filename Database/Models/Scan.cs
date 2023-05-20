@@ -18,5 +18,12 @@ namespace BookWiseApp.Database.Models
             ISBN = isbn;
             ScanDate = scanDate;
         }
+
+        public Scan(string isbn, DateTime scanDate)
+        {
+            Id = 0;
+            ISBN = isbn;
+            ScanDate = scanDate;
+        }
     }
 }

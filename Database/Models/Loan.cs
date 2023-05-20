@@ -22,5 +22,14 @@ namespace BookWiseApp.Database.Models
             LoanDate = loanDate;
             ReturnDate = returnDate;
         }
+
+        public Loan(int bookId, int memberId, DateTime loanDate, DateTime returnDate)
+        {
+            Id = 0;
+            BookId = bookId;
+            MemberId = memberId;
+            LoanDate = loanDate;
+            ReturnDate = returnDate;
+        }
     }
 }

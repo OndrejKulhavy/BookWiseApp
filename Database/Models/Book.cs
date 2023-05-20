@@ -24,6 +24,16 @@ namespace BookWiseApp.Database.Models
             ISBN = isbn;
             PublicationDate = publicationDate;
         }
+
+        public Book(string title, int authorId, int categoryId, string isbn, DateTime publicationDate)
+        {
+            Id = 0;
+            Title = title;
+            AuthorId = authorId;
+            CategoryId = categoryId;
+            ISBN = isbn;
+            PublicationDate = publicationDate;
+        }
     }
 
 }
