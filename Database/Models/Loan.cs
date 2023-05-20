@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookWiseApp.Database.Models
 {
-    internal class Loan
+    public class Loan : IBaseClass
     {
         public int Id { get; set; }
         public int BookId { get; set; }

@@ -1,12 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookWiseApp.Database.Data_Access_Objects
+namespace BookWiseApp.Database.Models
 {
-    public class MemberDAO
-    {
-    }
+    public class DatabaseService { }
 }

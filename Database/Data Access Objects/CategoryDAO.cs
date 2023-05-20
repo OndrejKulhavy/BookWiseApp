@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookWiseApp.Database.Data_Access_Objects
 {
-    internal class CategoryDAO
+    public class CategoryDAO
     {
     }
 }

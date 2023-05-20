@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookWiseApp.Database.Models
 {
-    internal class Employee
+    public class Employee : IBaseClass
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
