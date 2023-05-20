@@ -21,7 +21,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Delete(Employee employee)
         {
-            string query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
+            string query = "DELETE FROM Employee WHERE id = @EmployeeID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@EmployeeID", employee.Id);
             command.ExecuteNonQuery();
@@ -35,12 +35,12 @@ namespace BookWiseApp.Database.Data_Access_Objects
             while (reader.Read())
             {
                 Employee employee = new Employee(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString(),
-                    reader[3].ToString(),
-                    reader[4].ToString(),
-                    reader[5].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5)
                 );
                 yield return employee;
             }
@@ -49,19 +49,19 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public Employee? GetByID(int id)
         {
             Employee? employee = null;
-            string query = "SELECT * FROM Employee WHERE EmployeeID = @EmployeeID";
+            string query = "SELECT * FROM Employee WHERE id = @EmployeeID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@EmployeeID", id);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 employee = new Employee(
-                    Convert.ToInt32(reader[0].ToString()),
-                    reader[1].ToString(),
-                    reader[2].ToString(),
-                    reader[3].ToString(),
-                    reader[4].ToString(),
-                    reader[5].ToString()
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5)
                 );
             }
             return employee;
@@ -70,7 +70,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public void Save(Employee element)
         {
             if (element.Id == 0){
-                string query = "INSERT INTO Employee (FirstName, LastName, PasswordHash, Email, PhoneNumber) VALUES (@FirstName, @LastName, @PasswordHash, @Email, @PhoneNumber)";
+                string query = "INSERT INTO Employee (first_name, last_name, password_hash, email, phone_number) VALUES (@FirstName, @LastName, @PasswordHash, @Email, @PhoneNumber)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", element.FirstName);
                 command.Parameters.AddWithValue("@LastName", element.LastName);
@@ -80,7 +80,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
                 command.ExecuteNonQuery();
             }
             else{
-                string query = "UPDATE Employee SET FirstName = @FirstName, LastName = @LastName, PasswordHash = @PasswordHash, Email = @Email, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID";
+                string query = "UPDATE Employee SET first_name = @FirstName, last_name = @LastName, password_hash = @PasswordHash, email = @Email, phone_number = @PhoneNumber WHERE id = @EmployeeID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", element.FirstName);
                 command.Parameters.AddWithValue("@LastName", element.LastName);
