@@ -15,11 +15,13 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public LoanDAO()
         {
             this.connection = DbConnection.connection;
-            if (connection == null) throw new Exception("Conection to database failed in LoanDAO constructor");
+            if (connection == null)
+                throw new Exception("Conection to database failed in LoanDAO constructor");
         }
+
         public void Delete(Loan loan)
         {
-            string query = "DELETE FROM Loan WHERE LoanID = @LoanID";
+            string query = "DELETE FROM Loan WHERE id = @LoanID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LoanID", loan.Id);
             command.ExecuteNonQuery();
@@ -33,11 +35,12 @@ namespace BookWiseApp.Database.Data_Access_Objects
             while (reader.Read())
             {
                 Loan loan = new Loan(
-                    Convert.ToInt32(reader[0].ToString()),
-                    Convert.ToInt32(reader[1].ToString()),
-                    Convert.ToInt32(reader[2].ToString()),
-                    Convert.ToDateTime(reader[3].ToString()),
-                    Convert.ToDateTime(reader[4].ToString())                );
+                    reader.GetInt32(0),
+                    reader.GetInt32(1),
+                    reader.GetInt32(2),
+                    reader.GetDateTime(3),
+                    reader.GetDateTime(4)
+                );
                 yield return loan;
             }
             reader.Close();
@@ -46,18 +49,18 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public Loan? GetByID(int id)
         {
             Loan? loan = null;
-            string query = "SELECT * FROM Loan WHERE LoanID = @LoanID";
+            string query = "SELECT * FROM Loan WHERE id = @LoanID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LoanID", id);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 loan = new Loan(
-                    Convert.ToInt32(reader[0].ToString()),
-                    Convert.ToInt32(reader[1].ToString()),
-                    Convert.ToInt32(reader[2].ToString()),
-                    Convert.ToDateTime(reader[3].ToString()),
-                    Convert.ToDateTime(reader[4].ToString())
+                    reader.GetInt32(0),
+                    reader.GetInt32(1),
+                    reader.GetInt32(2),
+                    reader.GetDateTime(3),
+                    reader.GetDateTime(4)
                 );
             }
             reader.Close();
@@ -66,13 +69,27 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Save(Loan loan)
         {
-            string query = "INSERT INTO Loan (BookID, MemberID, LoanDate, ReturnDate) VALUES (@BookID, @MemberID, @LoanDate, @ReturnDate)";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@BookID", loan.BookId);
-            command.Parameters.AddWithValue("@MemberID", loan.MemberId);
-            command.Parameters.AddWithValue("@LoanDate", loan.LoanDate);
-            command.Parameters.AddWithValue("@ReturnDate", loan.ReturnDate);
-            command.ExecuteNonQuery();
+            if (loan.Id == 0)
+            {
+                string query = "INSERT INTO Loan (book_id, member_id, loan_date, return_date) VALUES (@BookID, @MemberID, @LoanDate, @ReturnDate)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@BookID", loan.BookId);
+                command.Parameters.AddWithValue("@MemberID", loan.MemberId);
+                command.Parameters.AddWithValue("@LoanDate", loan.LoanDate);
+                command.Parameters.AddWithValue("@ReturnDate", loan.ReturnDate);
+                command.ExecuteNonQuery();
+            }
+            else
+            {
+                string query = "UPDATE Loan SET book_id = @BookID, member_id = @MemberID, loan_date = @LoanDate, return_date = @ReturnDate WHERE id = @LoanID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@BookID", loan.BookId);
+                command.Parameters.AddWithValue("@MemberID", loan.MemberId);
+                command.Parameters.AddWithValue("@LoanDate", loan.LoanDate);
+                command.Parameters.AddWithValue("@ReturnDate", loan.ReturnDate);
+                command.Parameters.AddWithValue("@LoanID", loan.Id);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }
