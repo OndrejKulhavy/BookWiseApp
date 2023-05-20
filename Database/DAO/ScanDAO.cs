@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BookWiseApp.Database.Models;
 using System.Data.SqlClient;
 
-namespace BookWiseApp.Database.Data_Access_Objects
+namespace BookWiseApp.Database.DAO
 {
     public class ScanDAO : IDAO<Scan>
     {

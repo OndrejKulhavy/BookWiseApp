@@ -6,7 +6,7 @@ using BookWiseApp.Database.Models;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace BookWiseApp.Database.Data_Access_Objects
+namespace BookWiseApp.Database.DAO
 {
     public class LoanDAO : IDAO<Loan>
     {

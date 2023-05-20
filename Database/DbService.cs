@@ -1,3 +1,4 @@
+using BookWiseApp.Database.DAO;
 using BookWiseApp.Database.Models;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,15 @@ namespace BookWiseApp.Database
         {
             while (isChecking)
             {
-                // Do something
+                Thread.Sleep(5000);
+                List<Scan> scans = new ScanDAO().GetAll().ToList();
+                
+                if (scans.Count > 0){
+                    foreach (Scan scan in scans)
+                    {
+                        // Show new view with book details
+                    }
+                }
             }
         }
     }
