@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BookWiseApp.Database.Models
 {
-    public class DatabaseService
+    public class DbConnection
     {
         private static SqlConnection connection;
 
-        public DatabaseService()
+        public DbConnection()
         {
             InitializeConnection();
         }
