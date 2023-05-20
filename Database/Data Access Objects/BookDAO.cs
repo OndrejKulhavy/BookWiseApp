@@ -66,14 +66,26 @@ namespace BookWiseApp.Database.Data_Access_Objects
 
         public void Save(Book book)
         {
-            string query = "INSERT INTO Book (Title, AuthorID, CategoryID, ISBN, PublicationDate) VALUES (@Title, @AuthorID, @CategoryID, @ISBN, @PublicationDate)";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Title", book.Title);
-            command.Parameters.AddWithValue("@AuthorID", book.AuthorId);
-            command.Parameters.AddWithValue("@CategoryID", book.CategoryId);
-            command.Parameters.AddWithValue("@ISBN", book.ISBN);
-            command.Parameters.AddWithValue("@PublicationDate", book.PublicationDate);
-            command.ExecuteNonQuery();
+            if(book.Id == 0){
+                string query = "INSERT INTO Book (Title, AuthorID, GenreID, ISBN, PublishDate) VALUES (@Title, @AuthorID, @GenreID, @ISBN, @PublishDate)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Title", book.Title);
+                command.Parameters.AddWithValue("@AuthorID", book.AuthorId);
+                command.Parameters.AddWithValue("@GenreID", book.CategoryId);
+                command.Parameters.AddWithValue("@ISBN", book.ISBN);
+                command.Parameters.AddWithValue("@PublishDate", book.PublicationDate);
+                command.ExecuteNonQuery();
+            } else {
+                string query = "UPDATE Book SET Title = @Title, AuthorID = @AuthorID, GenreID = @GenreID, ISBN = @ISBN, PublishDate = @PublishDate WHERE BookID = @BookID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@BookID", book.Id);
+                command.Parameters.AddWithValue("@Title", book.Title);
+                command.Parameters.AddWithValue("@AuthorID", book.AuthorId);
+                command.Parameters.AddWithValue("@GenreID", book.CategoryId);
+                command.Parameters.AddWithValue("@ISBN", book.ISBN);
+                command.Parameters.AddWithValue("@PublishDate", book.PublicationDate);
+                command.ExecuteNonQuery();
+            }
         }
     
     }
