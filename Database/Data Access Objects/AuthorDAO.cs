@@ -14,7 +14,7 @@ namespace BookWiseApp.Database.Data_Access_Objects
         public AuthorDAO()
         {
             this.connection = DbConnection.connection;
-            if (connection == null) throw new Exception("Conenction to database failed in AuthorDAO constructor");
+            if (connection == null) throw new Exception("Conection to database failed in AuthorDAO constructor");
         }
         public void Delete(Author author)
         {
