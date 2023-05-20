@@ -4,30 +4,94 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookWiseApp.Database.Models;
+using System.Data.SqlClient;
 
 
 namespace BookWiseApp.Database.Data_Access_Objects
 {
     public class MemberDAO : IDAO<Member>
     {
-        public void Delete(Member element)
+        private SqlConnection connection;
+
+        public MemberDAO()
         {
-            throw new NotImplementedException();
+            this.connection = DbConnection.connection;
+            if (connection == null) throw new Exception("Conection to database failed in MemberDAO constructor");
+        }
+        public void Delete(Member member)
+        {
+            string query = "DELETE FROM Member WHERE MemberID = @MemberID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MemberID", member.Id);
+            command.ExecuteNonQuery();
         }
 
         public IEnumerable<Member> GetAll()
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM Member";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Member member = new Member(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5)
+                    );
+                yield return member;
+            }
+            reader.Close();
         }
 
         public Member? GetByID(int id)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM Member WHERE MemberID = @MemberID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MemberID", id);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Member member = new Member(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5)
+                    );
+                reader.Close();
+                return member;
+            }
+            reader.Close();
+            return null;
         }
 
         public void Save(Member element)
         {
-            throw new NotImplementedException();
+            if (element.Id == 0){
+                string query = "INSERT INTO Member (FirstName, LastName, PasswordHash, Email, PhoneNumber) VALUES (@FirstName, @LastName, @PasswordHash, @Email, @PhoneNumber)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FirstName", element.FirstName);
+                command.Parameters.AddWithValue("@LastName", element.LastName);
+                command.Parameters.AddWithValue("@PasswordHash", element.Address);
+                command.Parameters.AddWithValue("@Email", element.Email);
+                command.Parameters.AddWithValue("@PhoneNumber", element.Phone);
+                command.ExecuteNonQuery();
+            }
+            else{
+                string query = "UPDATE Member SET FirstName = @FirstName, LastName = @LastName, PasswordHash = @PasswordHash, Email = @Email, PhoneNumber = @PhoneNumber WHERE MemberID = @MemberID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FirstName", element.FirstName);
+                command.Parameters.AddWithValue("@LastName", element.LastName);
+                command.Parameters.AddWithValue("@PasswordHash", element.Address); 
+                command.Parameters.AddWithValue("@Email", element.Email);
+                command.Parameters.AddWithValue("@PhoneNumber", element.Phone);
+                command.Parameters.AddWithValue("@MemberID", element.Id);
+                command.ExecuteNonQuery();
+            }
         }
 
     }
