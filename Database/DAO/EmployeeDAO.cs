@@ -91,5 +91,20 @@ namespace BookWiseApp.Database.DAO
                 command.ExecuteNonQuery();
             }
         }
+
+        public bool ValidateLogin(string email, string password)
+        {
+            bool isValid = false;
+            string query = "SELECT * FROM Employee WHERE email = @Email AND password_hash = @PasswordHash";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Email", email);
+            command.Parameters.AddWithValue("@PasswordHash", password);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                isValid = true;
+            }
+            return isValid;
+        }
     }
 }

@@ -1,19 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="views\BookView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="views\EmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="views\HomeView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="views\LoginView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="views\SignUpView.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

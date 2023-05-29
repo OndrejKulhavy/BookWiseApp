@@ -5,11 +5,6 @@ D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\BookWiseApp.runti
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\BookWiseApp.dll
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\BookWiseApp.pdb
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.csproj.AssemblyReference.cache
-D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.Book.resources
-D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.Employee.resources
-D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.Home.resources
-D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.Login.resources
-D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.SignUp.resources
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.csproj.GenerateResource.cache
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.AssemblyInfoInputs.cache
@@ -20,3 +15,12 @@ D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\refint\BookWiseAp
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.pdb
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.genruntimeconfig.cache
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\ref\BookWiseApp.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.LoginView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.EmployeeView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.csproj.CopyComplete

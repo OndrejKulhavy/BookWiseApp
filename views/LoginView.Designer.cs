@@ -32,6 +32,7 @@
             this.button_login = new System.Windows.Forms.Button();
             this.input_login_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.input_register_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // input_login_username
@@ -47,12 +48,13 @@
             this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_login.AutoSize = true;
-            this.button_login.Location = new System.Drawing.Point(222, 163);
+            this.button_login.Location = new System.Drawing.Point(204, 163);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(94, 30);
+            this.button_login.Size = new System.Drawing.Size(112, 30);
             this.button_login.TabIndex = 2;
             this.button_login.Text = "Login";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // input_login_password
             // 
@@ -75,16 +77,28 @@
             this.label1.Text = "Login";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Login
+            // input_register_btn
+            // 
+            this.input_register_btn.Location = new System.Drawing.Point(12, 164);
+            this.input_register_btn.Name = "input_register_btn";
+            this.input_register_btn.Size = new System.Drawing.Size(151, 29);
+            this.input_register_btn.TabIndex = 5;
+            this.input_register_btn.Text = "Register Employee";
+            this.input_register_btn.UseVisualStyleBackColor = true;
+            this.input_register_btn.Click += new System.EventHandler(this.input_register_btn_Click);
+            // 
+            // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 205);
+            this.Controls.Add(this.input_register_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.input_login_password);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.input_login_username);
-            this.Name = "Login";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "LoginView";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,5 +111,6 @@
         private Button button_login;
         private TextBox input_login_password;
         private Label label1;
+        private Button input_register_btn;
     }
 }
