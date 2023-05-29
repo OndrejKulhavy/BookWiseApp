@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookWiseApp.Database.Models;
+using BookWiseApp.Database.DAO;
 
 namespace BookWiseApp.views
 {
@@ -28,6 +29,31 @@ namespace BookWiseApp.views
             input_employee_password.Text = employee.PasswordHash;
             input_employee_email.Text = employee.Email;
             input_employee_phone_number.Text = employee.PhoneNumber;
+        }
+
+        private void input_employee_save_btn_Click(object sender, EventArgs e)
+        {
+            string firstName = input_employee_first_name.Text;
+            string lastName = input_employee_last_name.Text;
+            string password = input_employee_password.Text;
+            string email = input_employee_email.Text;
+            string phoneNumber = input_employee_phone_number.Text;
+
+            if (employee == null)
+            {
+                employee = new Employee(firstName, lastName, password, email, phoneNumber);
+            }
+            else
+            {
+                employee.FirstName = firstName;
+                employee.LastName = lastName;
+                employee.PasswordHash = password;
+                employee.Email = email;
+                employee.PhoneNumber = phoneNumber;
+            }
+
+            new EmployeeDAO().Save(employee);
+            this.Close();
         }
     }
 }

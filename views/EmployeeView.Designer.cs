@@ -84,6 +84,7 @@
             this.input_employee_save_btn.TabIndex = 6;
             this.input_employee_save_btn.Text = "Save";
             this.input_employee_save_btn.UseVisualStyleBackColor = true;
+            this.input_employee_save_btn.Click += new System.EventHandler(this.input_employee_save_btn_Click);
             // 
             // EmployeeView
             // 
