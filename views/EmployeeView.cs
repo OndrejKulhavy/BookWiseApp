@@ -52,7 +52,16 @@ namespace BookWiseApp.views
                 employee.PhoneNumber = phoneNumber;
             }
 
-            new EmployeeDAO().Save(employee);
+            var employye = new EmployeeDAO();
+            try
+            {
+                employye.Save(employee);
+                MessageBox.Show("Employee saved successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving employee: " + ex.Message);
+            }
             this.Close();
         }
     }
