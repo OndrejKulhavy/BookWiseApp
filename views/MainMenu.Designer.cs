@@ -125,7 +125,9 @@
             this.dataGridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridBooks.Location = new System.Drawing.Point(6, 5);
             this.dataGridBooks.Name = "dataGridBooks";
+            this.dataGridBooks.ReadOnly = true;
             this.dataGridBooks.RowTemplate.Height = 25;
+            this.dataGridBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridBooks.Size = new System.Drawing.Size(804, 366);
             this.dataGridBooks.TabIndex = 0;
             this.dataGridBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBooks_CellClick);
@@ -146,7 +148,9 @@
             this.dataGridAuthors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAuthors.Location = new System.Drawing.Point(6, 6);
             this.dataGridAuthors.Name = "dataGridAuthors";
+            this.dataGridAuthors.ReadOnly = true;
             this.dataGridAuthors.RowTemplate.Height = 25;
+            this.dataGridAuthors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridAuthors.Size = new System.Drawing.Size(804, 364);
             this.dataGridAuthors.TabIndex = 0;
             this.dataGridAuthors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAuthors_CellClick);
@@ -167,10 +171,13 @@
             this.dataGridMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridMembers.Location = new System.Drawing.Point(6, 6);
             this.dataGridMembers.Name = "dataGridMembers";
+            this.dataGridMembers.ReadOnly = true;
             this.dataGridMembers.RowTemplate.Height = 25;
+            this.dataGridMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridMembers.Size = new System.Drawing.Size(804, 364);
             this.dataGridMembers.TabIndex = 0;
             this.dataGridMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMembers_CellClick);
+            this.dataGridMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMembers_CellContentClick);
             // 
             // tabScans
             // 

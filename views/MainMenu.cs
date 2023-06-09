@@ -67,6 +67,7 @@ namespace BookWiseApp.views
 
         private void dataGridMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             try
             {
                 Member? selectedMember = dataGridMembers.SelectedRows[0].DataBoundItem as Member;
@@ -75,7 +76,7 @@ namespace BookWiseApp.views
             catch
             {
                 MessageBox.Show("Please select a member");
-            }
+            }*/
         }
 
         private void dataGridScans_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,6 +162,9 @@ namespace BookWiseApp.views
             new AuthorView().Show();
         }
 
+        private void dataGridMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

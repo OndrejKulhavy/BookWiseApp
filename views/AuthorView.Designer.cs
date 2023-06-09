@@ -28,87 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.input_author_first_name = new System.Windows.Forms.TextBox();
+            this.input_author_last_name = new System.Windows.Forms.TextBox();
+            this.input_author_biography = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_save_author = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // input_author_first_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 27);
-            this.textBox1.TabIndex = 0;
+            this.input_author_first_name.Location = new System.Drawing.Point(87, 9);
+            this.input_author_first_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.input_author_first_name.Name = "input_author_first_name";
+            this.input_author_first_name.Size = new System.Drawing.Size(249, 23);
+            this.input_author_first_name.TabIndex = 0;
             // 
-            // textBox2
+            // input_author_last_name
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(284, 27);
-            this.textBox2.TabIndex = 1;
+            this.input_author_last_name.Location = new System.Drawing.Point(87, 34);
+            this.input_author_last_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.input_author_last_name.Name = "input_author_last_name";
+            this.input_author_last_name.Size = new System.Drawing.Size(249, 23);
+            this.input_author_last_name.TabIndex = 1;
             // 
-            // textBox3
+            // input_author_biography
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 78);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(284, 128);
-            this.textBox3.TabIndex = 2;
+            this.input_author_biography.Location = new System.Drawing.Point(87, 58);
+            this.input_author_biography.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.input_author_biography.Multiline = true;
+            this.input_author_biography.Name = "input_author_biography";
+            this.input_author_biography.Size = new System.Drawing.Size(249, 97);
+            this.input_author_biography.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(10, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "First Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Location = new System.Drawing.Point(10, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Last Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 81);
+            this.label3.Location = new System.Drawing.Point(10, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.Size = new System.Drawing.Size(61, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Biography";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button_save_author
             // 
-            this.button_save_author.Location = new System.Drawing.Point(289, 220);
+            this.button_save_author.Location = new System.Drawing.Point(253, 165);
+            this.button_save_author.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_save_author.Name = "button_save_author";
-            this.button_save_author.Size = new System.Drawing.Size(94, 29);
+            this.button_save_author.Size = new System.Drawing.Size(82, 22);
             this.button_save_author.TabIndex = 6;
             this.button_save_author.Text = "Save";
             this.button_save_author.UseVisualStyleBackColor = true;
+            this.button_save_author.Click += new System.EventHandler(this.button_save_author_Click);
             // 
-            // Author
+            // AuthorView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 261);
+            this.ClientSize = new System.Drawing.Size(346, 196);
             this.Controls.Add(this.button_save_author);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Author";
+            this.Controls.Add(this.input_author_biography);
+            this.Controls.Add(this.input_author_last_name);
+            this.Controls.Add(this.input_author_first_name);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "AuthorView";
             this.Text = "Author";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,9 +123,9 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox input_author_first_name;
+        private TextBox input_author_last_name;
+        private TextBox input_author_biography;
         private Label label1;
         private Label label2;
         private Label label3;
