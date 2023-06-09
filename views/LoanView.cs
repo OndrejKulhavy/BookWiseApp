@@ -1,5 +1,6 @@
 ﻿using BookWiseApp.Database.DAO;
 using BookWiseApp.Database.Models;
+using BookWiseApp.email;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,6 +88,8 @@ namespace BookWiseApp.views
                 loan = new Loan((int)loanId, book.Id, member.Id, loanDate, returnDate);
 
             new LoanDAO().Save(loan);
+
+            ReceiptSender.SendReceipt(loan);
 
             this.Hide();
         }
