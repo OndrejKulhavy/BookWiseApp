@@ -29,5 +29,9 @@ namespace BookWiseApp.Database.Models
             Biography = biography;
         }
 
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

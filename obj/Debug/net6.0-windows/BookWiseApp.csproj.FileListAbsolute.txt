@@ -28,3 +28,5 @@ D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.BookView.resources
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.LoanView.resources
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.MainMenu.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.CategoryView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.MemberView.resources

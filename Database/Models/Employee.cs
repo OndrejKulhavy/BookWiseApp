@@ -34,5 +34,10 @@ namespace BookWiseApp.Database.Models
             Email = email;
             PhoneNumber = phoneNumber;
         }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

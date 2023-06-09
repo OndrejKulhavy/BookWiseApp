@@ -35,9 +35,10 @@ namespace BookWiseApp.Database.Models
             LoanDate = loanDate;
             ReturnDate = returnDate;
         }
+
         public override string ToString()
         {
-            return $"Id: {Id}, BookId: {BookId}, MemberId: {MemberId}, LoanDate: {LoanDate}, ReturnDate: {ReturnDate}";
+            return $"{BookTitle} {MemberName}";
         }
     }
 }

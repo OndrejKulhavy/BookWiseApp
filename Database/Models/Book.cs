@@ -34,6 +34,13 @@ namespace BookWiseApp.Database.Models
             ISBN = isbn;
             PublicationDate = publicationDate;
         }
+
+        public override string ToString()
+        {
+            return $"{Title}";
+        }
     }
+
+
 
 }

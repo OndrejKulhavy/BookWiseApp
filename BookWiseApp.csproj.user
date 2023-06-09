@@ -7,6 +7,9 @@
     <Compile Update="views\BookView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="views\CategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="views\EmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="views\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="views\MemberView.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
