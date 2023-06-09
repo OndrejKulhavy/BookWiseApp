@@ -73,5 +73,30 @@ namespace BookWiseApp.views
                 combo_book_category.Items.Add(genre);
             }
         }
+
+        private void button_book_save_Click(object sender, EventArgs e)
+        {
+            if (book == null)
+            {
+                book = new Book(
+                    input_book_title.Text,
+                    ((Author)combo_book_author.SelectedItem).Id,
+                    ((Category)combo_book_category.SelectedItem).Id,
+                    input_book_isbn.Text,
+                    datePicker_book_published.Value
+                );
+            }
+            else
+            {
+                book.Title = input_book_title.Text;
+                book.AuthorId = ((Author)combo_book_author.SelectedItem).Id;
+                book.CategoryId = ((Category)combo_book_category.SelectedItem).Id;
+                book.ISBN = input_book_isbn.Text;
+                book.PublicationDate = datePicker_book_published.Value;
+            }
+
+            new BookDAO().Save(book);
+            this.Hide();
+        }
     }
 }

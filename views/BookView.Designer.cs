@@ -101,6 +101,7 @@
             this.button_book_save.TabIndex = 6;
             this.button_book_save.Text = "Save";
             this.button_book_save.UseVisualStyleBackColor = true;
+            this.button_book_save.Click += new System.EventHandler(this.button_book_save_Click);
             // 
             // label1
             // 
