@@ -24,3 +24,7 @@ D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win-x86\
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.csproj.CopyComplete
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.AuthorView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.BookView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.LoanView.resources
+D:\SPSE_Jecna\PV\BookWise\BookWiseApp\obj\Debug\net6.0-windows\BookWiseApp.views.MainMenu.resources

@@ -41,6 +41,7 @@ namespace BookWiseApp.Database.DAO
                 );
                 yield return book;
             }
+            reader.Close();
         }
 
         public Book? GetByID(int id)
@@ -61,6 +62,7 @@ namespace BookWiseApp.Database.DAO
                     reader.GetDateTime(5)
                 );
             }
+            reader.Close();
             return book;
         }
 
