@@ -14,6 +14,10 @@ namespace BookWiseApp.Database.Models
         public DateTime LoanDate { get; set; }
         public DateTime ReturnDate { get; set; }
 
+        // values from different tables
+        public string BookTitle { get; set; }
+        public string MemberName { get; set; }
+
         public Loan(int id, int bookId, int memberId, DateTime loanDate, DateTime returnDate)
         {
             Id = id;
@@ -30,6 +34,10 @@ namespace BookWiseApp.Database.Models
             MemberId = memberId;
             LoanDate = loanDate;
             ReturnDate = returnDate;
+        }
+        public override string ToString()
+        {
+            return $"Id: {Id}, BookId: {BookId}, MemberId: {MemberId}, LoanDate: {LoanDate}, ReturnDate: {ReturnDate}";
         }
     }
 }

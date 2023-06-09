@@ -37,10 +37,11 @@
             // 
             // input_login_username
             // 
-            this.input_login_username.Location = new System.Drawing.Point(12, 47);
+            this.input_login_username.Location = new System.Drawing.Point(10, 35);
+            this.input_login_username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.input_login_username.Name = "input_login_username";
             this.input_login_username.PlaceholderText = "Enter your username";
-            this.input_login_username.Size = new System.Drawing.Size(304, 27);
+            this.input_login_username.Size = new System.Drawing.Size(266, 23);
             this.input_login_username.TabIndex = 0;
             // 
             // button_login
@@ -48,9 +49,10 @@
             this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button_login.AutoSize = true;
-            this.button_login.Location = new System.Drawing.Point(204, 163);
+            this.button_login.Location = new System.Drawing.Point(178, 124);
+            this.button_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(112, 30);
+            this.button_login.Size = new System.Drawing.Size(98, 25);
             this.button_login.TabIndex = 2;
             this.button_login.Text = "Login";
             this.button_login.UseVisualStyleBackColor = true;
@@ -58,11 +60,12 @@
             // 
             // input_login_password
             // 
-            this.input_login_password.Location = new System.Drawing.Point(12, 95);
+            this.input_login_password.Location = new System.Drawing.Point(10, 71);
+            this.input_login_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.input_login_password.Name = "input_login_password";
             this.input_login_password.PasswordChar = '*';
             this.input_login_password.PlaceholderText = "Enter your password";
-            this.input_login_password.Size = new System.Drawing.Size(304, 27);
+            this.input_login_password.Size = new System.Drawing.Size(266, 23);
             this.input_login_password.TabIndex = 1;
             this.input_login_password.UseSystemPasswordChar = true;
             // 
@@ -70,18 +73,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(10, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 35);
+            this.label1.Size = new System.Drawing.Size(61, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Login";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // input_register_btn
             // 
-            this.input_register_btn.Location = new System.Drawing.Point(12, 164);
+            this.input_register_btn.Location = new System.Drawing.Point(10, 124);
+            this.input_register_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.input_register_btn.Name = "input_register_btn";
-            this.input_register_btn.Size = new System.Drawing.Size(151, 29);
+            this.input_register_btn.Size = new System.Drawing.Size(132, 25);
             this.input_register_btn.TabIndex = 5;
             this.input_register_btn.Text = "Register Employee";
             this.input_register_btn.UseVisualStyleBackColor = true;
@@ -89,15 +93,16 @@
             // 
             // LoginView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 205);
+            this.ClientSize = new System.Drawing.Size(287, 154);
             this.Controls.Add(this.input_register_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.input_login_password);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.input_login_username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginView";
             this.Text = "Form1";
             this.ResumeLayout(false);

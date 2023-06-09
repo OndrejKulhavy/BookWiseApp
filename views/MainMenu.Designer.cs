@@ -29,135 +29,265 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabs = new System.Windows.Forms.TabControl();
+            this.tabLoans = new System.Windows.Forms.TabPage();
+            this.dataGridLoans = new System.Windows.Forms.DataGridView();
+            this.tabBooks = new System.Windows.Forms.TabPage();
+            this.dataGridBooks = new System.Windows.Forms.DataGridView();
+            this.tabAuthors = new System.Windows.Forms.TabPage();
+            this.tabMembers = new System.Windows.Forms.TabPage();
+            this.tabScans = new System.Windows.Forms.TabPage();
+            this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridAuthors = new System.Windows.Forms.DataGridView();
+            this.dataGridMembers = new System.Windows.Forms.DataGridView();
+            this.dataGridScans = new System.Windows.Forms.DataGridView();
+            this.tabs.SuspendLayout();
+            this.tabLoans.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLoans)).BeginInit();
+            this.tabBooks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBooks)).BeginInit();
+            this.tabAuthors.SuspendLayout();
+            this.tabMembers.SuspendLayout();
+            this.tabScans.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAuthors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridScans)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabs
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 31);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(983, 539);
-            this.tabControl1.TabIndex = 0;
+            this.tabs.Controls.Add(this.tabLoans);
+            this.tabs.Controls.Add(this.tabBooks);
+            this.tabs.Controls.Add(this.tabAuthors);
+            this.tabs.Controls.Add(this.tabMembers);
+            this.tabs.Controls.Add(this.tabScans);
+            this.tabs.Location = new System.Drawing.Point(10, 23);
+            this.tabs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabs.Name = "tabs";
+            this.tabs.SelectedIndex = 0;
+            this.tabs.Size = new System.Drawing.Size(824, 404);
+            this.tabs.TabIndex = 0;
             // 
-            // tabPage1
+            // tabLoans
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(975, 506);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Loans";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabLoans.Controls.Add(this.dataGridLoans);
+            this.tabLoans.Location = new System.Drawing.Point(4, 24);
+            this.tabLoans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabLoans.Name = "tabLoans";
+            this.tabLoans.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabLoans.Size = new System.Drawing.Size(816, 376);
+            this.tabLoans.TabIndex = 0;
+            this.tabLoans.Text = "Loans";
+            this.tabLoans.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dataGridLoans
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(975, 506);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Books";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dataGridLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridLoans.Location = new System.Drawing.Point(6, 4);
+            this.dataGridLoans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridLoans.Name = "dataGridLoans";
+            this.dataGridLoans.RowHeadersWidth = 51;
+            this.dataGridLoans.RowTemplate.Height = 29;
+            this.dataGridLoans.Size = new System.Drawing.Size(804, 368);
+            this.dataGridLoans.TabIndex = 0;
+            this.dataGridLoans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridLoans_CellContentClick);
             // 
-            // contextMenuStrip1
+            // tabBooks
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(102, 28);
+            this.tabBooks.Controls.Add(this.dataGridBooks);
+            this.tabBooks.Location = new System.Drawing.Point(4, 24);
+            this.tabBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabBooks.Name = "tabBooks";
+            this.tabBooks.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabBooks.Size = new System.Drawing.Size(816, 376);
+            this.tabBooks.TabIndex = 1;
+            this.tabBooks.Text = "Books";
+            this.tabBooks.UseVisualStyleBackColor = true;
             // 
-            // fileToolStripMenuItem
+            // dataGridBooks
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.dataGridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBooks.Location = new System.Drawing.Point(6, 5);
+            this.dataGridBooks.Name = "dataGridBooks";
+            this.dataGridBooks.RowTemplate.Height = 25;
+            this.dataGridBooks.Size = new System.Drawing.Size(804, 366);
+            this.dataGridBooks.TabIndex = 0;
+            // 
+            // tabAuthors
+            // 
+            this.tabAuthors.Controls.Add(this.dataGridAuthors);
+            this.tabAuthors.Location = new System.Drawing.Point(4, 24);
+            this.tabAuthors.Name = "tabAuthors";
+            this.tabAuthors.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAuthors.Size = new System.Drawing.Size(816, 376);
+            this.tabAuthors.TabIndex = 2;
+            this.tabAuthors.Text = "Authors";
+            this.tabAuthors.UseVisualStyleBackColor = true;
+            // 
+            // tabMembers
+            // 
+            this.tabMembers.Controls.Add(this.dataGridMembers);
+            this.tabMembers.Location = new System.Drawing.Point(4, 24);
+            this.tabMembers.Name = "tabMembers";
+            this.tabMembers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMembers.Size = new System.Drawing.Size(816, 376);
+            this.tabMembers.TabIndex = 3;
+            this.tabMembers.Text = "Members";
+            this.tabMembers.UseVisualStyleBackColor = true;
+            // 
+            // tabScans
+            // 
+            this.tabScans.Controls.Add(this.dataGridScans);
+            this.tabScans.Location = new System.Drawing.Point(4, 24);
+            this.tabScans.Name = "tabScans";
+            this.tabScans.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScans.Size = new System.Drawing.Size(816, 376);
+            this.tabScans.TabIndex = 4;
+            this.tabScans.Text = "Scans";
+            this.tabScans.UseVisualStyleBackColor = true;
+            // 
+            // loanBindingSource
+            // 
+            this.loanBindingSource.DataSource = typeof(BookWiseApp.Database.Models.Loan);
+            // 
+            // loanBindingSource1
+            // 
+            this.loanBindingSource1.DataSource = typeof(BookWiseApp.Database.Models.Loan);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1,
-            this.toolsToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.addToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1007, 28);
-            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Size = new System.Drawing.Size(846, 24);
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem1
+            // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.signOutToolStripMenuItem});
-            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem1.Text = "File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.newToolStripMenuItem.Text = "New Receipt";
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             // 
-            // toolsToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.memberToolStripMenuItem,
+            this.bookToolStripMenuItem,
+            this.loanToolStripMenuItem,
+            this.categoryToolStripMenuItem,
+            this.authorToolStripMenuItem});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.addToolStripMenuItem.Text = "Add";
             // 
-            // dataGridView1
+            // memberToolStripMenuItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(300, 188);
-            this.dataGridView1.TabIndex = 0;
+            this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.memberToolStripMenuItem.Text = "Member";
+            // 
+            // bookToolStripMenuItem
+            // 
+            this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.bookToolStripMenuItem.Text = "Book";
+            // 
+            // loanToolStripMenuItem
+            // 
+            this.loanToolStripMenuItem.Name = "loanToolStripMenuItem";
+            this.loanToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.loanToolStripMenuItem.Text = "Loan";
+            // 
+            // categoryToolStripMenuItem
+            // 
+            this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.categoryToolStripMenuItem.Text = "Category";
+            // 
+            // authorToolStripMenuItem
+            // 
+            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.authorToolStripMenuItem.Text = "Author";
+            // 
+            // dataGridAuthors
+            // 
+            this.dataGridAuthors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAuthors.Location = new System.Drawing.Point(6, 6);
+            this.dataGridAuthors.Name = "dataGridAuthors";
+            this.dataGridAuthors.RowTemplate.Height = 25;
+            this.dataGridAuthors.Size = new System.Drawing.Size(804, 364);
+            this.dataGridAuthors.TabIndex = 0;
+            // 
+            // dataGridMembers
+            // 
+            this.dataGridMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMembers.Location = new System.Drawing.Point(6, 6);
+            this.dataGridMembers.Name = "dataGridMembers";
+            this.dataGridMembers.RowTemplate.Height = 25;
+            this.dataGridMembers.Size = new System.Drawing.Size(804, 364);
+            this.dataGridMembers.TabIndex = 0;
+            // 
+            // dataGridScans
+            // 
+            this.dataGridScans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridScans.Location = new System.Drawing.Point(6, 6);
+            this.dataGridScans.Name = "dataGridScans";
+            this.dataGridScans.RowTemplate.Height = 25;
+            this.dataGridScans.Size = new System.Drawing.Size(804, 364);
+            this.dataGridScans.TabIndex = 0;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 582);
+            this.ClientSize = new System.Drawing.Size(846, 436);
+            this.Controls.Add(this.tabs);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.tabs.ResumeLayout(false);
+            this.tabLoans.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLoans)).EndInit();
+            this.tabBooks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBooks)).EndInit();
+            this.tabAuthors.ResumeLayout(false);
+            this.tabMembers.ResumeLayout(false);
+            this.tabScans.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAuthors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridScans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,16 +295,27 @@
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
+        private TabControl tabs;
+        private TabPage tabLoans;
+        private TabPage tabBooks;
+        private DataGridView dataGridLoans;
+        private BindingSource loanBindingSource1;
+        private BindingSource loanBindingSource;
+        private DataGridView dataGridBooks;
+        private TabPage tabAuthors;
+        private TabPage tabMembers;
+        private TabPage tabScans;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem1;
-        private ToolStripMenuItem newToolStripMenuItem;
-        private DataGridView dataGridView1;
+        private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem signOutToolStripMenuItem;
-        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem addToolStripMenuItem;
+        private ToolStripMenuItem memberToolStripMenuItem;
+        private ToolStripMenuItem bookToolStripMenuItem;
+        private ToolStripMenuItem loanToolStripMenuItem;
+        private ToolStripMenuItem categoryToolStripMenuItem;
+        private ToolStripMenuItem authorToolStripMenuItem;
+        private DataGridView dataGridAuthors;
+        private DataGridView dataGridMembers;
+        private DataGridView dataGridScans;
     }
 }

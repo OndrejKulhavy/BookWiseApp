@@ -21,7 +21,8 @@ namespace BookWiseApp
             if (isValid)
             {
                 //open main form
-                this.Close();
+                new MainMenu().Show();
+                Hide();
             }
             else
             {
