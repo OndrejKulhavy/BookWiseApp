@@ -28,6 +28,8 @@ namespace BookWiseApp.views
         public BookView(Book book)
         {
             InitializeComponent();
+            setAuthorsCombo();
+            setGenresCombo();
             this.book = book;
             input_book_title.Text = book.Title;
             input_book_isbn.Text = book.ISBN;

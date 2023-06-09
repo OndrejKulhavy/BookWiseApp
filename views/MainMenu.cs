@@ -152,11 +152,6 @@ namespace BookWiseApp.views
             new LoanView().Show();
         }
 
-        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new CategoryView().Show();
-        }
-
         private void authorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AuthorView().Show();
@@ -165,6 +160,19 @@ namespace BookWiseApp.views
         private void dataGridMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadLoans();
+            loadBooks();
+            loadMembers();
+            loadAuthors();
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

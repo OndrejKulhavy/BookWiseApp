@@ -104,7 +104,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginView";
-            this.Text = "Form1";
+            this.Text = "Login";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginView_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

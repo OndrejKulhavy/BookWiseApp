@@ -52,6 +52,7 @@ namespace BookWiseApp.views
                     input_author_biography.Text
                 );
                 new AuthorDAO().Save(author);
+                Hide();
             }
         }
     }
