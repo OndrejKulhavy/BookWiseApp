@@ -105,6 +105,7 @@
             this.dataGridLoans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridLoans.Size = new System.Drawing.Size(804, 368);
             this.dataGridLoans.TabIndex = 0;
+            this.dataGridLoans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridLoans_CellClick);
             this.dataGridLoans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridLoans_CellContentClick);
             // 
             // tabBooks
@@ -127,6 +128,7 @@
             this.dataGridBooks.RowTemplate.Height = 25;
             this.dataGridBooks.Size = new System.Drawing.Size(804, 366);
             this.dataGridBooks.TabIndex = 0;
+            this.dataGridBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBooks_CellClick);
             // 
             // tabAuthors
             // 
@@ -147,6 +149,7 @@
             this.dataGridAuthors.RowTemplate.Height = 25;
             this.dataGridAuthors.Size = new System.Drawing.Size(804, 364);
             this.dataGridAuthors.TabIndex = 0;
+            this.dataGridAuthors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAuthors_CellClick);
             // 
             // tabMembers
             // 
@@ -167,6 +170,7 @@
             this.dataGridMembers.RowTemplate.Height = 25;
             this.dataGridMembers.Size = new System.Drawing.Size(804, 364);
             this.dataGridMembers.TabIndex = 0;
+            this.dataGridMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMembers_CellClick);
             // 
             // tabScans
             // 
@@ -187,6 +191,7 @@
             this.dataGridScans.RowTemplate.Height = 25;
             this.dataGridScans.Size = new System.Drawing.Size(804, 364);
             this.dataGridScans.TabIndex = 0;
+            this.dataGridScans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridScans_CellClick);
             // 
             // loanBindingSource
             // 

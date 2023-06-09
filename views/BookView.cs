@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookWiseApp.Database.DAO;
+using BookWiseApp.Database.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,64 @@ namespace BookWiseApp.views
 {
     public partial class BookView : Form
     {
+        private Book? book;
+
         public BookView()
         {
             InitializeComponent();
+
+            setAuthorsCombo();
+
+            setGenresCombo();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        public BookView(Book book)
         {
+            InitializeComponent();
+            this.book = book;
+            input_book_title.Text = book.Title;
+            input_book_isbn.Text = book.ISBN;
+            datePicker_book_published.Value = book.PublicationDate;
 
+            var selectedAuthor = combo_book_author.Items
+                .Cast<Author>()
+                .Where(a => a.Id == book.AuthorId)
+                .FirstOrDefault();
+
+            if (selectedAuthor != null)
+            {
+                combo_book_author.SelectedItem = selectedAuthor;
+            }
+
+            var selectedGenre = combo_book_category.Items
+                .Cast<Category>()
+                .Where(c => c.Id == book.CategoryId)
+                .FirstOrDefault();
+
+            if (selectedGenre != null)
+            {
+                combo_book_category.SelectedItem = selectedGenre;
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
+
+        private void setAuthorsCombo()
+        {
+            IEnumerable<Author> authors = new AuthorDAO().GetAll();
+            foreach (Author author in authors)
+            {
+                combo_book_author.Items.Add(author);
+            }
+        }
+
+        private void setGenresCombo()
+        {
+            IEnumerable<Category> genres = new CategoryDAO().GetAll();
+            foreach (Category genre in genres)
+            {
+                combo_book_category.Items.Add(genre);
+            }
         }
     }
 }

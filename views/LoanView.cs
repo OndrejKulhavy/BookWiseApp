@@ -25,8 +25,25 @@ namespace BookWiseApp.views
             setBooksCombo();
             setMemberCombo();
 
-            combo_loan_book.SelectedItem = new BookDAO().GetByID(loan.BookId);
-            combo_loan_member.SelectedItem = new MemberDAO().GetByID(loan.MemberId);
+            var selectedBook = combo_loan_book.Items
+                .Cast<Book>()
+                .Where(b => b.Id == loan.BookId)
+                .FirstOrDefault();
+
+            if (selectedBook != null)
+            {
+                combo_loan_book.SelectedItem = selectedBook;
+            }
+
+            var selectedMember = combo_loan_member.Items
+                .Cast<Member>()
+                .Where(m => m.Id == loan.MemberId)
+                .FirstOrDefault();
+
+            if (selectedMember != null)
+            {
+                combo_loan_member.SelectedItem = selectedMember;
+            }
         }
 
         public LoanView()
